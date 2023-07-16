@@ -2,8 +2,11 @@
 {
     if (num < 100)
         return "Нет третьего числа";
-    string result = num.ToString()[2].ToString();
-    return result;
+    while (num > 999)
+    {
+        num /= 10;
+    }
+    return (num%10).ToString();
 }
 Console.WriteLine("введи число");
 int.TryParse(Console.ReadLine(), out int num);
